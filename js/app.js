@@ -1,6 +1,13 @@
-function postText(collectAreaId, postAreaId) {
+function postText(collectAreaId, postAreaId, wordCountShow = 0) {
     const writtenTextField = document.getElementById(collectAreaId);
     const writtenText = writtenTextField.value;
+
+    if(wordCountShow == 1){
+        const wordCountField = document.getElementById('word-count');
+        wordCountField.parentNode.style.display = "block";
+        const wordCount = writtenText.split('').filter(e => e.trim().length).join('').length;
+        wordCountField.innerText = wordCount;  
+    }
 
     writtenTextField.parentNode.removeChild(writtenTextField);
 
@@ -22,6 +29,6 @@ document.getElementById('start-btn').addEventListener('click', function(event){
     document.getElementById('answer-area').disabled = false;
     document.getElementById('answer-area').innerText = '';
 
-    const timeOver = setTimeout(postText, 1800000, 'answer-area', 'post-answer');
+    const timeOver = setTimeout(postText, 5000, 'answer-area', 'post-answer', 1);
 })
 
