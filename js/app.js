@@ -31,6 +31,6 @@ document.getElementById('start-btn').addEventListener('click', function(event){
     document.getElementById('answer-area').disabled = false;
     document.getElementById('answer-area').innerText = '';
 
-    const timeOver = setTimeout(postText, 5000, 'answer-area', 'post-answer', 1);
+    const timeOver = setTimeout(postText, 1800000, 'answer-area', 'post-answer', 1);
 })
 
