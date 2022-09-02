@@ -31,6 +31,38 @@ document.getElementById('start-btn').addEventListener('click', function(event){
     document.getElementById('answer-area').disabled = false;
     document.getElementById('answer-area').innerText = '';
 
-    const timeOver = setTimeout(postText, 1800000, 'answer-area', 'post-answer', 1);
+    const timeOver = setTimeout(postText, 30*60*1000, 'answer-area', 'post-answer', 1);
+
+    const clock = document.getElementById('clock');
+    let mins = 0;
+    let secs = 0;
+
+    function timeChange(){
+        secs+=1;
+        if(secs === 60){
+            mins += 1;
+            secs = 0;
+        }
+
+        const minutes = checkTime(mins);
+        const seconds = checkTime(secs);
+
+        if(mins === 30 && secs === 1){
+            clock.classList.remove('text-white')
+            clock.classList.add('text-red-500')
+        }
+        clock.innerHTML = `${minutes} : ${seconds}`
+
+        setTimeout(timeChange, 1000)
+    }
+
+    function checkTime(i){
+        if(i < 10){
+            i = '0' + i;
+        }
+        return i;
+    }
+
+    timeChange();
 })
 

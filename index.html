@@ -14,21 +14,22 @@
     <main class="bg-gray-900 mt-2 min-h-screen">
         <section class="mx-4">
             <div class="grid grid-cols-2">
-                <div class="mt-4 mx-4">
+                <div class="flex justify-between items-center mt-4 mx-4">
                     <button class="bg-red-600 px-8 py-2 text-white" id="start-btn">START</button>
+                    <div id="clock" class="text-white text-2xl"></div>
                 </div>
                 <div class="mt-4 mx-4">
                     <button class="bg-blue-600 px-4 py-2 text-white" id="postq-btn">POST QUESTION</button>
                 </div>
             </div>
             <div class="grid grid-cols-2">
-                <div>
-                    <textarea style="resize: none;" class="border-2 m-4 pl-2 pt-2" name="" id="answer-area" cols="80" rows="20" disabled>Click start button to write. You will get 30 minutes time to complete your answer.</textarea>
+                <div class="mr-8">
+                    <textarea style="resize: none; width: 100%;" class="border-2 m-4 pl-2 pt-2" name="" id="answer-area" cols="80" rows="20" disabled>Click start button to write. You will get 30 minutes time to complete your answer.</textarea>
                     <article id="post-answer" class="text-white m-4"></article>
                     <p style="display: none;" class="text-white m-4">WORD COUNT - <span id="word-count"></span></p>
                 </div>
-                <div>
-                    <textarea style="resize: none;" class="border-2 m-4 p-2" name="" id="question-area" cols="80" rows="20"></textarea>
+                <div class="w-full">
+                    <textarea style="resize: none; width: 95%;" class="border-2 m-4 p-2" name="" id="question-area" cols="80" rows="20"></textarea>
                     <article id="post-question" class="bg-white m-4"></article>
                 </div>
             </div>
