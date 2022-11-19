@@ -15,25 +15,16 @@ function postText(collectAreaId, postAreaId, wordCountShow = 0) {
     postText.innerText = writtenText;
 }
 
-document.getElementById('postq-btn').addEventListener('click', function(event){
+document.getElementById('start-btn2').addEventListener('click', function(event){
     event.target.disabled = true;
     event.target.style.backgroundColor = "gray";
-    document.getElementById('post-question').classList.add('p-2');
-    
-    postText('question-area', 'post-question');
-})
 
-document.getElementById('start-btn').addEventListener('click', function(event){
-    event.target.disabled = true;
-    event.target.style.backgroundColor = "gray";
-    document.getElementById('post-question').classList.add('mb-4');
+    document.getElementById('answer-area2').disabled = false;
+    document.getElementById('answer-area2').innerText = '';
 
-    document.getElementById('answer-area').disabled = false;
-    document.getElementById('answer-area').innerText = '';
+    const timeOver = setTimeout(postText, 20*60*1000, 'answer-area2', 'post-answer2', 1);
 
-    const timeOver = setTimeout(postText, 30*60*1000, 'answer-area', 'post-answer', 1);
-
-    const clock = document.getElementById('clock');
+    const clock = document.getElementById('clock2');
     let mins = 0;
     let secs = 0;
 
@@ -65,3 +56,4 @@ document.getElementById('start-btn').addEventListener('click', function(event){
 
     timeChange();
 })
+
